@@ -1,0 +1,28 @@
+install composer
+copas file env -> .env
+sesuaikan isinya:
+    CI_ENVIRONMENT = production
+
+    app.baseURL = 'http://localhost:8080/'
+
+    database.default.hostname = localhost
+    database.default.database = gis-banjir
+    database.default.username = root
+    database.default.password = 
+    database.default.DBDriver = MySQLi
+
+bikin db "gis-banjir"
+
+jalankan command (terminal):
+    composer install
+
+    php spark migrate:refresh
+
+    php spark db:seed UsersSeeder
+    php spark db:seed LokasiBanjirSeeder
+    php spark db:seed PelaporanSeeder
+    php spark db:seed AsetTerdampakSeeder
+
+    php spark serve
+
+buka url http://localhost:8080 (browser)
