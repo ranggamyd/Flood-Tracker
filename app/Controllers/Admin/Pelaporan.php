@@ -145,7 +145,7 @@ class Pelaporan extends \App\Controllers\BaseController
 
         $this->pm->save([
             'id' => $id,
-            'id_user' => session('id_user'),
+            // 'id_user' => session('id_user'),
             'lokasi'  => $this->request->getVar('lokasi'),
             'deskripsi'  => $this->request->getVar('deskripsi'),
             'foto_pelaporan'  => $fileName,
